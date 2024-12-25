@@ -12,6 +12,16 @@ info_str="info"
 push_str="push"
 pull_str="pull"
 
+help(){
+
+    echo "\n\nhelp:\n\n"
+    echo "init - initialize a local and remote repository - autogit init <remote_url_name> \n"
+    echo "remove - remove currently existing remote - autogit remove \n"
+    echo "info - display current information of current remotes - autogit info \n"
+    echo "push - push all current changes in local to remote - autogit push \n"
+    echo "pull - pull all current changes from remote to local - autogit pull \n\n"
+}
+
 init(){
 
     git init && git symbolic-ref HEAD refs/heads/main
