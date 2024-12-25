@@ -3,6 +3,8 @@
 
 int run_git_command(char* GIT_COMMAND, char** GIT_COMMAND_ARGUMENTS); // for process control
 
+void help();  // display command information
+
 int init(char* REMOTE_URL); // remote functions
 int forget();
 int info();

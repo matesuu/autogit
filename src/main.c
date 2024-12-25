@@ -17,15 +17,15 @@ int main(int argc, char** argv)
 
     if(argc < 2)
     {
-        perror("error: missing positional arguments");
-        return 1;
+        help();
+        return 0;
     }
 
     if(strcmp(init_str, argv[1]) == 0)
     {
         if(argc < 3)
         {
-            perror("missing argument: remote repository url");
+            perror("missing argument: remote repository url ");
 
             return 1;
         }
@@ -33,7 +33,7 @@ int main(int argc, char** argv)
         else
         {
             init(argv[2]);
-            printf("successfully initialized and added remote repository");
+            printf("successfully initialized and added remote repository ");
 
             return 0;
         }
@@ -41,20 +41,20 @@ int main(int argc, char** argv)
 
     else if(strcmp(remove_str, argv[1]) == 0)
     {
-        printf("removing...");
+        printf("removing... ");
         forget();
     }
 
     else if(strcmp(info_str, argv[1]) == 0)
     {
-        printf("remote repository information: /n");
+        printf("remote repository information: \n");
         info();
     }
 
     else if(strcmp(push_str, argv[1]) == 0)
     {
         push();
-        printf("sucessfully pushed refs to remote repository");
+        printf("sucessfully pushed refs to remote repository ");
 
         return 0;
     }
@@ -62,14 +62,14 @@ int main(int argc, char** argv)
     else if(strcmp(pull_str, argv[1]) == 0)
     {
         pull();
-        printf("sucessfully pulled refs from remote repository");
+        printf("sucessfully pulled refs from remote repository ");
 
         return 0;
     }
 
     else
     {
-        perror("error: unknown command");
+        perror("error: unknown command ");
 
         return 1;
     }

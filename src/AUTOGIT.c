@@ -47,6 +47,16 @@ int run_git_command(char* GIT_COMMAND, char** GIT_COMMAND_ARGUMENTS)
     return 0;
 }
 
+void help()
+{
+    printf("\n\nhelp - \n\n");
+    printf("init - initialize a local and remote repository - autogit init <remote_url_name> \n");
+    printf("remove - remove currently existing remote - autogit remove \n");
+    printf("info - display current information of current remotes - autogit info \n");
+    printf("push - push all current changes in local to remote - autogit push \n");
+    printf("pull - pull all current changes from remote to local - autogit pull \n\n");
+}
+
 int init(char* REMOTE_URL)
 {
     char* args_1[] = {"git", "init", "&&", "git", "symbolic-ref", "HEAD", "refs/heads/main", NULL};

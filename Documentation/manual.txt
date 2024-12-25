@@ -1,0 +1,14 @@
+                                                                        autogit:
+                                                                       a tutorial
+
+
+                                                                        
+                                                                1. Compiling and Running
+
+To compile from the src folder, simply type the following line into your terminal interface:
+
+gcc main.c AUTOGIT.c -o autogit
+
+or alternatively, use the Makefile provided within the src folder and type "make" within the directory.
+
+For macOS and Linux users, there is also a Bash version of autogit within the scripts folder.
