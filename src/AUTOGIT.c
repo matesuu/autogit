@@ -55,6 +55,8 @@ void help()
     printf("info - display current information of current remotes - autogit info \n");
     printf("push - push all current changes in local to remote - autogit push \n");
     printf("pull - pull all current changes from remote to local - autogit pull \n\n");
+
+    printf("written by matesuu (December 2024) \n\n");
 }
 
 int init(char* REMOTE_URL)

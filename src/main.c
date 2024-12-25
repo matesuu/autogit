@@ -9,6 +9,7 @@
 
 int main(int argc, char** argv)
 {
+    char* help_str = "help";
     char* init_str = "init";
     char* remove_str = "remove";
     char* info_str = "info";
@@ -21,7 +22,13 @@ int main(int argc, char** argv)
         return 0;
     }
 
-    if(strcmp(init_str, argv[1]) == 0)
+    if(strcmp(help_str, argv[1]) == 0)
+    {
+        help();
+        return 0;
+    }
+
+    else if(strcmp(init_str, argv[1]) == 0)
     {
         if(argc < 3)
         {
