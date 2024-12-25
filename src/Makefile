@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -std=c17 -Wall -Wextra
+CFLAGS = -std=c11 -Wall -Wextra
 TARGET = autogit
 SRC = main.c AUTOGIT.c
 HEADER = AUTOGIT.h
