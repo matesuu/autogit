@@ -39,8 +39,8 @@ int main(int argc, char** argv)
 
         else
         {
-            init_msg();
             init(argv[2]);
+            printf("process finished ");
 
             return 0;
         }
@@ -48,32 +48,32 @@ int main(int argc, char** argv)
 
     else if(strcmp(remove_str, argv[1]) == 0)
     {
-        forget_msg();
         forget();
+        printf("process finished ");
 
         return 0;
     }
 
     else if(strcmp(info_str, argv[1]) == 0)
     {
-        info_msg();
         info();
+        printf("process finished ");
 
         return 0;
     }
 
     else if(strcmp(push_str, argv[1]) == 0)
     {
-        push_msg();
         push();
+        printf("process finished ");
 
         return 0;
     }
 
     else if(strcmp(pull_str, argv[1]) == 0)
     {
-        pull_msg();
         pull();
+        printf("process finished ");
 
         return 0;
     }

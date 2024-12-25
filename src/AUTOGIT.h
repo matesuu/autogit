@@ -12,10 +12,4 @@ int info();
 int push(); // repo change functions
 int pull();
 
-void init_msg(); // message functions
-void forget_msg();
-void info_msg();
-void push_msg();
-void pull_msg();
-
 #endif

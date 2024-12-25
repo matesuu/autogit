@@ -70,9 +70,8 @@ elif [ "$1" == "$init_str" ]; then
 
     if [ $# -eq 2 ]; then
 
-        echo "adding remote repository... "
         init $1 $2
-        echo "successfully initialized and added remote repository "
+        echo "process finished "
 
     else
 
@@ -82,23 +81,22 @@ elif [ "$1" == "$init_str" ]; then
 
 elif [ "$1" == "$remove_str" ]; then
 
-    echo "removing... "
     remove
+    echo "process finished "
 
 elif [ "$1" == "$info_str" ]; then
-
-    echo "remote repository information \n"
     info
+    echo "process finished "
 
 elif [ "$1" == "$push_str" ]; then
 
-    echo "pushing to remote... "
     push
+    echo "process finished "
 
 elif [ "$1" == "$pull_str" ]; then
 
-    echo "pulling from remote... "
     pull
+    echo "process finished "
 
 else
 

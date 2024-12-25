@@ -124,28 +124,3 @@ int pull()
 
     return 0;
 }
-
-void init_msg()
-{
-    printf("adding remote repository... ");
-}
-
-void forget_msg()
-{
-    printf("removing remote repository... ");
-}
-
-void info_msg()
-{
-    printf("remote repository information: \n");
-}
-
-void push_msg()
-{
-    printf("pushing to remote... ");
-}
-
-void pull_msg()
-{
-    printf("pulling from remote... ");
-}
