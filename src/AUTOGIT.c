@@ -80,8 +80,6 @@ int init(char* REMOTE_URL)
 
 int forget()
 {
-    printf("removing... ");
-
     char* args_1[] = {"git", "remote", "remove", "origin", NULL};
     run_git_command("git", args_1);
 
@@ -90,8 +88,6 @@ int forget()
 
 int info()
 {
-    printf("remote repository information: \n");
-
     char* args_1[] = {"git", "remote", "-v", NULL};
     run_git_command("git", args_1);
 
@@ -100,8 +96,6 @@ int info()
 
 int push()
 {
-    printf("pushing to remote... ");
-
     char* args_1[] = {"git", "status", NULL};
     run_git_command("git", args_1);
 
@@ -122,8 +116,6 @@ int push()
 
 int pull()
 {
-    printf("pulling from remote... ");
-
     char* args_1[] = {"git", "status", NULL};
     run_git_command("git", args_1);
 
@@ -131,4 +123,29 @@ int pull()
     run_git_command("git", args_2);
 
     return 0;
+}
+
+void init_msg()
+{
+    printf("adding remote repository... ");
+}
+
+void forget_msg()
+{
+    printf("removing remote repository... ");
+}
+
+void info_msg()
+{
+    printf("remote repository information: \n");
+}
+
+void push_msg()
+{
+    printf("pushing to remote... ");
+}
+
+void pull_msg()
+{
+    printf("pulling from remote... ");
 }

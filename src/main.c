@@ -39,6 +39,7 @@ int main(int argc, char** argv)
 
         else
         {
+            init_msg();
             init(argv[2]);
 
             return 0;
@@ -47,17 +48,23 @@ int main(int argc, char** argv)
 
     else if(strcmp(remove_str, argv[1]) == 0)
     {
-        printf("removing... ");
+        forget_msg();
         forget();
+
+        return 0;
     }
 
     else if(strcmp(info_str, argv[1]) == 0)
     {
+        info_msg();
         info();
+
+        return 0;
     }
 
     else if(strcmp(push_str, argv[1]) == 0)
     {
+        push_msg();
         push();
 
         return 0;
@@ -65,6 +72,7 @@ int main(int argc, char** argv)
 
     else if(strcmp(pull_str, argv[1]) == 0)
     {
+        pull_msg();
         pull();
 
         return 0;

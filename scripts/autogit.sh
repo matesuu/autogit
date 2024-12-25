@@ -69,6 +69,8 @@ if [ "$1" == "$help_str" ]; then
 elif [ "$1" == "$init_str" ]; then
 
     if [ $# -eq 2 ]; then
+
+        echo "adding remote repository... "
         init $1 $2
         echo "successfully initialized and added remote repository "
 
