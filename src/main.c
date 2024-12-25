@@ -19,7 +19,7 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    else if(strcmp(init_str, argv[1]))
+    if(strcmp(init_str, argv[1]) == 0)
     {
         if(argc < 3)
         {
@@ -37,7 +37,7 @@ int main(int argc, char** argv)
         }
     }
 
-    else if(strcmp(push_str, argv[1]))
+    else if(strcmp(push_str, argv[1]) == 0)
     {
         push();
         printf("sucessfully pushed refs to remote repository");
@@ -45,7 +45,7 @@ int main(int argc, char** argv)
         return 0;
     }
 
-    else if(strcmp(pull_str, argv[1]))
+    else if(strcmp(pull_str, argv[1]) == 0)
     {
         pull();
         printf("sucessfully pulled refs from remote repository");
