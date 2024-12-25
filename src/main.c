@@ -60,16 +60,16 @@ int main(int argc, char** argv)
 
     else if(strcmp(push_str, argv[1]) == 0)
     {
+        printf("pushing to remote ");
         push();
-        printf("sucessfully pushed refs to remote repository ");
 
         return 0;
     }
 
     else if(strcmp(pull_str, argv[1]) == 0)
     {
+        printf("pulling from remote... ");
         pull();
-        printf("sucessfully pulled refs from remote repository ");
 
         return 0;
     }
