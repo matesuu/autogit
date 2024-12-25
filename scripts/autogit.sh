@@ -15,6 +15,8 @@ help(){
     echo "info - display current information of current remotes - autogit info \n"
     echo "push - push all current changes in local to remote - autogit push \n"
     echo "pull - pull all current changes from remote to local - autogit pull \n\n"
+
+    echo "written by matesuu - (December 2024) \n\n"
 }
 
 init(){
@@ -68,37 +70,37 @@ elif if [ "$1" == "$init_str" ]; then
 
     if [ $# -eq 2 ]; then
         init $1 $2
-        echo "successfully initialized and added remote repository"
+        echo "successfully initialized and added remote repository "
 
     else
 
-        echo "missing argument: remote repository url"
+        echo "missing argument: remote repository url "
         exit 1
     fi
 
 elif [ "$1" == "$remove_str" ]; then
 
-    echo "removing..."
+    echo "removing... "
     remove
 
 elif [ "$1" == "$info_str" ]; then
 
-    echo "remote repository information\n"
+    echo "remote repository information \n"
     info
 
 elif [ "$1" == "$push_str" ]; then
 
+    echo "pushing to remote... "
     push
-    echo "sucessfully pushed refs to remote repository"
 
 elif [ "$1" == "$pull_str" ]; then
 
+    echo "pulling from remote... "
     pull
-    echo
 
 else
 
-    echo "error: unknown command"
+    echo "error: unknown command "
 fi
 
 exit 0
