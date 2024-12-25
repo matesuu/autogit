@@ -30,15 +30,8 @@ int run_git_command(char* GIT_COMMAND, char** GIT_COMMAND_ARGUMENTS)
         int status = 0;
         waitpid(PARENT_ID, &status, 0);
 
-        if(WIFEXITED(status))
+        if(!WIFEXITED(status))
         {
-            printf("child process terminated");
-        }
-
-        else
-        {   
-            printf("child process terminated abnormally");
-            
             exit(1);
         }
     }
