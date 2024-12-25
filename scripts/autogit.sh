@@ -65,6 +65,7 @@ fi
 if [ "$1" == "$help_str" ]; then
 
     help
+fi
 
 elif if [ "$1" == "$init_str" ]; then
 
