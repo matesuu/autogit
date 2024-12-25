@@ -40,7 +40,6 @@ int main(int argc, char** argv)
         else
         {
             init(argv[2]);
-            printf("successfully initialized and added remote repository ");
 
             return 0;
         }
@@ -54,13 +53,11 @@ int main(int argc, char** argv)
 
     else if(strcmp(info_str, argv[1]) == 0)
     {
-        printf("remote repository information: \n");
         info();
     }
 
     else if(strcmp(push_str, argv[1]) == 0)
     {
-        printf("pushing to remote ");
         push();
 
         return 0;
@@ -68,7 +65,6 @@ int main(int argc, char** argv)
 
     else if(strcmp(pull_str, argv[1]) == 0)
     {
-        printf("pulling from remote... ");
         pull();
 
         return 0;
