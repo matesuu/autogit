@@ -7,8 +7,21 @@
 
 To compile from the src folder, simply type the following line into your terminal interface:
 
-gcc main.c AUTOGIT.c -o autogit
+    gcc main.c AUTOGIT.c -o autogit
 
 or alternatively, use the Makefile provided within the src folder and type "make" within the directory.
 
-For macOS and Linux users, there is also a Bash version of autogit within the scripts folder.
+For macOS and Linux users, there is also a Bash version of autogit within the scripts folder. To run:
+
+    chmod +x autogit.sh
+
+
+                                                                2. The PATH Variable
+
+In order for autogit to be useful, you must first move the given binary (or script) to your PATH variable. 
+This is achieved by the following:
+
+    sudo mv autogit /usr/local/bin
+
+You can now run autogit from any directory.
+
