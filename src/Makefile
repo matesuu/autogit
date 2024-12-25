@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -std=c99 -Wall -Wextra
 TARGET = autogit
-SRC = main.c
+SRC = main.c AUTOGIT.c
 HEADER = AUTOGIT.h
 
 all: $(TARGET)

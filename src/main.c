@@ -10,6 +10,8 @@
 int main(int argc, char** argv)
 {
     char* init_str = "init";
+    char* remove_str = "remove";
+    char* info_str = "info";
     char* push_str = "push";
     char* pull_str = "pull";
 
@@ -31,10 +33,22 @@ int main(int argc, char** argv)
         else
         {
             init(argv[2]);
-            printf("successfully initialized remote repository");
+            printf("successfully initialized and added remote repository");
 
             return 0;
         }
+    }
+
+    else if(strcmp(remove_str, argv[1]) == 0)
+    {
+        printf("removing...");
+        forget();
+    }
+
+    else if(strcmp(info_str, argv[1]) == 0)
+    {
+        printf("remote repository information: /n");
+        info();
     }
 
     else if(strcmp(push_str, argv[1]) == 0)

@@ -1,3 +1,11 @@
+/*
+
+Note: For the sake of simplicity, the name of a remote repository when initialized will always be 'origin'. As this is a tool
+aimed to simplify the use of git as a tool, there are no current plans to change this design facet.
+
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -52,6 +60,22 @@ int init(char* REMOTE_URL)
 
     char* args_4[] = {"git", "remote", "-v", NULL};
     run_git_command("git", args_4);
+
+    return 0;
+}
+
+int forget()
+{
+    char* args_1[] = {"git", "remote", "remove", "origin", NULL};
+    run_git_command("git", args_1);
+
+    return 0;
+}
+
+int info()
+{
+    char* args_1[] = {"git", "remote", "-v", NULL};
+    run_git_command("git", args_1);
 
     return 0;
 }
