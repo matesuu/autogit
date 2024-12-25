@@ -1,11 +1,5 @@
 #!/bin/bash
 
-if [ $# -eq 0 ]; then
-
-    echo "error: missing positional arguments"
-    exit 1
-fi
-
 init_str="init"
 remove_str="remove"
 info_str="info"
@@ -59,6 +53,11 @@ pull(){
     git pull origin main
 }
 
+if [ $# -eq 0 ]; then
+
+    help
+    exit 0
+fi
 
 if [ "$1" == "$init_str" ]; then
 
@@ -98,3 +97,4 @@ else
 fi
 
 exit 0
+
