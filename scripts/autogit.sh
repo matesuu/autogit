@@ -1,5 +1,6 @@
 #!/bin/bash
 
+help_str="help"
 init_str="init"
 remove_str="remove"
 info_str="info"
@@ -59,7 +60,11 @@ if [ $# -eq 0 ]; then
     exit 0
 fi
 
-if [ "$1" == "$init_str" ]; then
+if [ "$1" == "$help_str" ]; then
+
+    help
+
+elif if [ "$1" == "$init_str" ]; then
 
     if [ $# -eq 2 ]; then
         init $1 $2
