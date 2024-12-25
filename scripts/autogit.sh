@@ -65,9 +65,8 @@ fi
 if [ "$1" == "$help_str" ]; then
 
     help
-fi
 
-elif if [ "$1" == "$init_str" ]; then
+elif [ "$1" == "$init_str" ]; then
 
     if [ $# -eq 2 ]; then
         init $1 $2
@@ -105,4 +104,3 @@ else
 fi
 
 exit 0
-
