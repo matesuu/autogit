@@ -8,6 +8,7 @@ fi
 
 init_str="init"
 push_str="push"
+pull_str="pull"
 
 init(){
 
@@ -24,7 +25,7 @@ push(){
     git status
     git add . --all
 
-    git commit -m "commited to github.com using autogit"
+    git commit -m "commited to repo using autogit"
 
     git pull --rebase origin main
     git push -u -f origin main
@@ -33,7 +34,7 @@ push(){
 pull(){
 
     git status
-    pull origin main
+    git pull origin main
 }
 
 
@@ -41,7 +42,7 @@ if [ "$1" == "$init_str" ]; then
 
     if [ $# -eq 2 ]; then
         init $1 $2
-        echo "successfully initialized remote repository on github.com"
+        echo "successfully initialized remote repository"
 
     else
 
@@ -52,7 +53,12 @@ if [ "$1" == "$init_str" ]; then
 elif [ "$1" == "$push_str" ]; then
 
     push
-    echo "sucessfully pushed refs to remote repository on github.com"
+    echo "sucessfully pushed refs to remote repository"
+
+elif [ "$1" == "$pull_str" ]; then
+
+    pull
+    echo
 
 else
 
