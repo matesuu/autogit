@@ -25,3 +25,17 @@ This is achieved by the following:
 
 You can now run autogit from any directory.
 
+                                                                3. Commands and Functionality
+
+Here is a comprehensive list of commands and an explanation of their functionality:
+
+help - displays help window
+init - initalizes a local git repo and adds a remote repo via a URL ('origin')
+remove - removes remote repository within a directory ('origin')
+info - displays information regarding remotes ('origin')
+new - creates a new branch within remote repo and switches current working branch to target branch
+switch - switches the source branch to a given target branch
+delete - deletes a branch within the remote repo
+push - pushes all changes to a given branch
+pull pulls all changes from a given branch
+

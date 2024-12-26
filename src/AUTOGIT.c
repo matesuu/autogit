@@ -1,7 +1,10 @@
 /*
 
 Note: For the sake of simplicity, the name of a remote repository when initialized will always be 'origin'. As this is a tool
-aimed to simplify the use of git as a tool, there are no current plans to change this design facet.
+aimed to simplify the use of git as a tool, there are no current plans to change this design facet. Therefore, autogit only supports
+the use of a singular remote. Will work on this later...
+
+- matesuu
 
 */
 
