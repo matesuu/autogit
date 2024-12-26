@@ -6,6 +6,8 @@ the use of a singular remote. Will work on this later...
 
 also commit messages as of now will always read as 'commited to remote repo using autogit'.. because i said so.
 
+p.s. nettspend sucks
+
 - matesuu
 
 */
@@ -61,7 +63,7 @@ void help()
     printf("new - creates a new branch within remote - autogit new <branch_name> \n");
     printf("switch - changes current working branch - autogit change <branch_name> \n");
     printf("delete - deletes a given branch from remote - autogit delete <branch_name> \n");
-    printf("push - push all current changes to a specified branch - autogit push <branch_name> \n");
+    printf("push - push all current changes to a specified branch - autogit push <branch_name> <optional: commit message> \n");
     printf("pull - pull all current changes from a specified branch - autogit pull <branch_name> \n\n");
 
     printf("written by matesuu (December 2024) \n\n");
@@ -135,6 +137,26 @@ int push(char* BRANCH_NAME)
     run_git_command("git", args_2);
 
     char* args_3[] = {"git", "commit", "-m", "commited to repo using autogit", NULL};
+    run_git_command("git", args_3);
+
+    char* args_4[] = {"git", "pull", "--rebase", "origin", BRANCH_NAME, NULL};
+    run_git_command("git", args_4);
+
+    char* args_5[] = {"git", "push", "-u", "origin", BRANCH_NAME, NULL};
+    run_git_command("git", args_5);
+
+    return 0;
+}
+
+int push_commit(char* BRANCH_NAME, char* COMMIT_MESSAGE)
+{
+    char* args_1[] = {"git", "status", NULL};
+    run_git_command("git", args_1);
+
+    char* args_2[] = {"git", "add", ".", "--all", NULL};
+    run_git_command("git", args_2);
+
+    char* args_3[] = {"git", "commit", "-m", COMMIT_MESSAGE, NULL};
     run_git_command("git", args_3);
 
     char* args_4[] = {"git", "pull", "--rebase", "origin", BRANCH_NAME, NULL};

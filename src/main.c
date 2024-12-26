@@ -119,6 +119,14 @@ int main(int argc, char** argv)
             return 1;
         }
 
+        if(argc == 4)
+        {
+            push_commit(argv[2], argv[3]);
+            printf("process finished ");
+
+            return 0;
+        }
+
         push(argv[2]);
         printf("process finished ");
 
