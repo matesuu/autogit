@@ -1,5 +1,6 @@
 #ifndef AUTOGIT_H
 #define AUTOGIT_H
+#pragma once
 
 int run_git_command(char* GIT_COMMAND, char** GIT_COMMAND_ARGUMENTS); // for process control
 
