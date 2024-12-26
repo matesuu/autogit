@@ -9,7 +9,7 @@ int init(char* REMOTE_URL); // remote functions
 int forget();
 int info();
 
-int new(char* TARGET_NAME);
+int new(char* TARGET_NAME); // branch functions
 int change(char* TARGET_NAME);
 int delete(char* TARGET_NAME);
 
