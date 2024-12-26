@@ -104,7 +104,7 @@ elif [ "$1" == "$init_str" ]; then
 
     if [ $# -eq 2 ]; then
 
-        init $1 $2
+        init $2
         echo "process finished "
 
     else
@@ -125,25 +125,58 @@ elif [ "$1" == "$info_str" ]; then
 
 elif [ "$1" == "$new_str" ]; then
 
-    new
-    echo "process finished "
+    if [ $# -eq 2 ]; then
+
+        new $2
+        echo "process finished "
+
+    else
+
+        echo "missing argument: target branch name "
+        exit 1
+    fi
 
 elif [ "$1" == "$switch_str" ]; then
 
-    change
-    echo "process finished "
+    if [ $# -eq 2 ]; then
+
+        change $2
+        echo "process finished "
+
+    else
+
+        echo "missing argument: target branch name "
+        exit 1
+    fi
 
 elif [ "$1" == "$delete_str" ]; then
 
-    delete
-    echo "process finished "
+    if [ $# -eq 2 ]; then
+
+        delete $2
+        echo "process finished "
+
+    else
+
+        echo "missing argument: target branch name "
+        exit 1
+    fi
 
 elif [ "$1" == "$push_str" ]; then
 
-    if [ $# -ge 3 ]; then
+    if [ $# -ge 2 ]; then
 
-        push_commit
+        if [ $# -eq 2 ]; then
+
+        push $2
         echo "process finished "
+
+        else
+
+        push_commit $2 $3
+        echo "process finished "
+        
+        fi
 
     else
 
@@ -154,8 +187,16 @@ elif [ "$1" == "$push_str" ]; then
 
 elif [ "$1" == "$pull_str" ]; then
 
-    pull
-    echo "process finished "
+    if [ $# -eq 2 ]; then
+
+        pull $2
+        echo "process finished "
+
+    else
+
+        echo "missing argument: branch name "
+        exit 1
+    fi
 
 else
 
