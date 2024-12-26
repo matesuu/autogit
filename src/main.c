@@ -13,6 +13,9 @@ int main(int argc, char** argv)
     char* init_str = "init";
     char* remove_str = "remove";
     char* info_str = "info";
+    char* new_str = "new";
+    char* switch_str = "switch";
+    char* delete_str = "delete";
     char* push_str = "push";
     char* pull_str = "pull";
 
@@ -62,9 +65,61 @@ int main(int argc, char** argv)
         return 0;
     }
 
+    else if(strcmp(new_str, argv[1]) == 0)
+    {
+        if(argc < 3)
+        {
+            perror("missing argument: target branch name ");
+            
+            return 1;
+        }
+
+        new(argv[2]);
+        printf("process finished ");
+
+        return 0;
+    }
+
+    else if(strcmp(switch_str, argv[1]) == 0)
+    {
+        if(argc < 3)
+        {
+            perror("missing argument: target branch name ");
+
+            return 1;
+        }
+
+        change(argv[2]);
+        printf("process finished ");
+
+        return 0;
+    }
+
+    else if(strcmp(delete_str, argv[1]) == 0)
+    {
+        if(argc < 3)
+        {
+            perror("missing argument: target branch name ");
+
+            return 1;
+        }
+
+        delete(argv[2]);
+        printf("process finished ");
+
+        return 0;
+    }
+
     else if(strcmp(push_str, argv[1]) == 0)
     {
-        push();
+        if(argc < 3)
+        {
+            perror("missing argument: branch name ");
+
+            return 1;
+        }
+
+        push(argv[2]);
         printf("process finished ");
 
         return 0;
@@ -72,7 +127,14 @@ int main(int argc, char** argv)
 
     else if(strcmp(pull_str, argv[1]) == 0)
     {
-        pull();
+        if(argc < 3)
+        {
+            perror("missing argument: branch name ");
+
+            return 1;
+        }
+
+        pull(argv[2]);
         printf("process finished ");
 
         return 0;

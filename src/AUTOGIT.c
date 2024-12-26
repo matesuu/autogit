@@ -50,11 +50,14 @@ int run_git_command(char* GIT_COMMAND, char** GIT_COMMAND_ARGUMENTS)
 void help()
 {
     printf("\n\nhelp - \n\n");
-    printf("init - initialize a local and remote repository - autogit init <remote_url_name> \n");
+    printf("init - initialize a local and remote repository and create branch main - autogit init <remote_url_name> \n");
     printf("remove - remove currently existing remote - autogit remove \n");
     printf("info - display current information of current remotes - autogit info \n");
-    printf("push - push all current changes in local to remote - autogit push \n");
-    printf("pull - pull all current changes from remote to local - autogit pull \n\n");
+    printf("new - creates a new branch within remote - autogit new <branch_name> \n");
+    printf("switch - changes current working branch - autogit change <branch_name> \n");
+    printf("delete - deletes a given branch from remote - autogit delete <branch_name> \n");
+    printf("push - push all current changes to a specified branch - autogit push <branch_name> \n");
+    printf("pull - pull all current changes from a specified branch - autogit pull <branch_name> \n\n");
 
     printf("written by matesuu (December 2024) \n\n");
 }
@@ -94,7 +97,31 @@ int info()
     return 0;
 }
 
-int push()
+int new(char* BRANCH_NAME)
+{
+    char* args_1[] = {"git", "checkout", "-b", BRANCH_NAME, NULL};
+    run_git_command("git", args_1);
+
+    return 0;
+}
+
+int change(char* BRANCH_NAME)
+{
+    char* args_1[] = {"git", "checkout", BRANCH_NAME, NULL};
+    run_git_command("git", args_1);
+
+    return 0;
+}
+
+int delete(char* BRANCH_NAME)
+{
+    char* args_1[] = {"git", "branch", "-d", BRANCH_NAME, NULL};
+    run_git_command("git", args_1);
+
+    return 0;
+}
+
+int push(char* BRANCH_NAME)
 {
     char* args_1[] = {"git", "status", NULL};
     run_git_command("git", args_1);
@@ -105,21 +132,21 @@ int push()
     char* args_3[] = {"git", "commit", "-m", "commited to repo using autogit", NULL};
     run_git_command("git", args_3);
 
-    char* args_4[] = {"git", "pull", "--rebase", "origin", "main", NULL};
+    char* args_4[] = {"git", "pull", "--rebase", "origin", BRANCH_NAME, NULL};
     run_git_command("git", args_4);
 
-    char* args_5[] = {"git", "push", "-u", "origin", "main", NULL};
+    char* args_5[] = {"git", "push", "-u", "origin", BRANCH_NAME, NULL};
     run_git_command("git", args_5);
 
     return 0;
 }
 
-int pull()
+int pull(char* BRANCH_NAME)
 {
     char* args_1[] = {"git", "status", NULL};
     run_git_command("git", args_1);
 
-    char* args_2[] = {"git", "pull", "origin", "main", NULL};
+    char* args_2[] = {"git", "pull", "origin", BRANCH_NAME, NULL};
     run_git_command("git", args_2);
 
     return 0;

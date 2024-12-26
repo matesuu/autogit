@@ -9,7 +9,11 @@ int init(char* REMOTE_URL); // remote functions
 int forget();
 int info();
 
-int push(); // repo change functions
-int pull();
+int new(char* TARGET_NAME);
+int change(char* TARGET_NAME);
+int delete(char* TARGET_NAME);
+
+int push(char* BRANCH_NAME); // repo change functions
+int pull(char* BRANCH_NAME);
 
 #endif
