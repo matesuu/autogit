@@ -101,6 +101,9 @@ int info()
     char* args_1[] = {"git", "remote", "-v", NULL};
     run_git_command("git", args_1);
 
+    char* args_2[] = {"git", "branch", NULL};
+    run_git_command("git", args_2);
+
     return 0;
 }
 
