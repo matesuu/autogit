@@ -1,5 +1,5 @@
                                                                         autogit:
-                                                                       a tutorial
+                                                                 a comprehensive  tutorial
 
                                                                        by matesuu
 
