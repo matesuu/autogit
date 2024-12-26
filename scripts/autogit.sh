@@ -2,8 +2,11 @@
 
 help_str="help"
 init_str="init"
-remove_str="remove"
+deinit_str="remove"
 info_str="info"
+new_str="new"
+switch_str="switch"
+delete_str="delete"
 push_str="push"
 pull_str="pull"
 
@@ -31,7 +34,7 @@ init(){
     git remote -v
 }
 
-remove(){
+deinit(){
 
     git remote remove origin
     git remote -v
@@ -43,6 +46,21 @@ info(){
     git branch
 }
 
+new(){
+
+    git checkout -b $3
+}
+
+change(){
+
+    git checkout $3
+}
+
+delete(){
+
+    git branch -d $3
+}
+
 push(){
 
     git status
@@ -50,15 +68,26 @@ push(){
 
     git commit -m "commited to repo using autogit"
 
-    git pull --rebase origin main
-    git push -u -f origin main
+    git pull --rebase origin $2
+    git push -u origin $2
 }
 
+push_commit(){
+
+    git status
+    git add . --all
+
+    git commit -m $3
+
+    git pull --rebase origin $2
+    git push -u origin $2
+
+}
 
 pull(){
 
     git status
-    git pull origin main
+    git pull origin $2
 }
 
 if [ $# -eq 0 ]; then
@@ -84,19 +113,44 @@ elif [ "$1" == "$init_str" ]; then
         exit 1
     fi
 
-elif [ "$1" == "$remove_str" ]; then
+elif [ "$1" == "$deinit_str" ]; then
 
-    remove
+    deinit
     echo "process finished "
 
 elif [ "$1" == "$info_str" ]; then
+
     info
+    echo "process finished "
+
+elif [ "$1" == "$new_str" ]; then
+
+    new
+    echo "process finished "
+
+elif [ "$1" == "$switch_str" ]; then
+
+    change
+    echo "process finished "
+
+elif [ "$1" == "$delete_str" ]; then
+
+    delete
     echo "process finished "
 
 elif [ "$1" == "$push_str" ]; then
 
-    push
-    echo "process finished "
+    if [ $# -ge 3 ]; then
+
+        push_commit
+        echo "process finished "
+
+    else
+
+        push
+        echo "process finished "
+    
+    fi
 
 elif [ "$1" == "$pull_str" ]; then
 
