@@ -4,6 +4,8 @@ Note: For the sake of simplicity, the name of a remote repository when initializ
 aimed to simplify the use of git as a tool, there are no current plans to change this design facet. Therefore, autogit only supports
 the use of a singular remote. Will work on this later...
 
+also commit messages as of now will always read as 'commited to remote repo using autogit'.. because i said so.
+
 - matesuu
 
 */
