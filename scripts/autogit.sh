@@ -48,17 +48,17 @@ info(){
 
 new(){
 
-    git checkout -b $3
+    git checkout -b $2
 }
 
 change(){
 
-    git checkout $3
+    git checkout $2
 }
 
 delete(){
 
-    git branch -d $3
+    git branch -d $2
 }
 
 push(){
