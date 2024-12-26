@@ -30,7 +30,7 @@ init(){
     git init && git symbolic-ref HEAD refs/heads/main
     git config --global init.defaultBranch main
 
-    git remote add origin $2
+    git remote add origin "$2"
     git remote -v
 }
 
@@ -48,17 +48,17 @@ info(){
 
 new(){
 
-    git checkout -b $2
+    git checkout -b "$2"
 }
 
 change(){
 
-    git checkout $2
+    git checkout "$2"
 }
 
 delete(){
 
-    git branch -d $2
+    git branch -d "$2"
 }
 
 push(){
@@ -68,8 +68,8 @@ push(){
 
     git commit -m "commited to repo using autogit"
 
-    git pull --rebase origin $2
-    git push -u origin $2
+    git pull --rebase origin "$2"
+    git push -u origin "$2"
 }
 
 push_commit(){
@@ -77,17 +77,17 @@ push_commit(){
     git status
     git add . --all
 
-    git commit -m $3
+    git commit -m "$3"
 
-    git pull --rebase origin $2
-    git push -u origin $2
+    git pull --rebase origin "$2"
+    git push -u origin "$2"
 
 }
 
 pull(){
 
     git status
-    git pull origin $2
+    git pull origin "$2"
 }
 
 if [ $# -eq 0 ]; then
