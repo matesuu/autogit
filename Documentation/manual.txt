@@ -1,6 +1,8 @@
                                                                         autogit:
                                                                        a tutorial
 
+                                                                       by matesuu
+
 
                                                                         
                                                                 1. Compiling and Running
