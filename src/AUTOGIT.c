@@ -58,8 +58,8 @@ void help()
 {
     printf("\n\nhelp - \n\n");
     printf("init - initialize a local and remote repository and create branch main - autogit init <remote_url_name> \n");
-    printf("remove - remove currently existing remote - autogit remove \n");
-    printf("info - display current information of current remotes - autogit info \n");
+    printf("deinit - remove currently existing remote - autogit deinit \n");
+    printf("info - display current information of current remotes and branches - autogit info \n");
     printf("new - creates a new branch within remote - autogit new <branch_name> \n");
     printf("switch - changes current working branch - autogit change <branch_name> \n");
     printf("delete - deletes a given branch from remote - autogit delete <branch_name> \n");

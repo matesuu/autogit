@@ -10,11 +10,14 @@ pull_str="pull"
 help(){
 
     echo "\n\nhelp:\n\n"
-    echo "init - initialize a local and remote repository - autogit init <remote_url_name> \n"
-    echo "remove - remove currently existing remote - autogit remove \n"
-    echo "info - display current information of current remotes - autogit info \n"
-    echo "push - push all current changes in local to remote - autogit push \n"
-    echo "pull - pull all current changes from remote to local - autogit pull \n\n"
+    echo "init - initialize a local and remote repository and create branch main - autogit init <remote_url_name> \n"
+    echo "deinit - remove currently existing remote - autogit deinit \n"
+    echo "info - display current information of current remotes and branches - autogit info \n"
+    echo "new - creates a new branch within remote - autogit new <branch_name> \n"
+    echo "switch - changes current working branch - autogit change <branch_name> \n"
+    echo "delete - deletes a given branch from remote - autogit delete <branch_name> \n"
+    echo "push - push all current changes to a specified branch - autogit push <branch_name> <optional: commit message> \n"
+    echo "pull - pull all current changes from a specified branch - autogit pull <branch_name> \n\n"
 
     echo "written by matesuu - (December 2024) \n\n"
 }
@@ -37,6 +40,7 @@ remove(){
 info(){
 
     git remote -v
+    git branch
 }
 
 push(){
@@ -49,6 +53,7 @@ push(){
     git pull --rebase origin main
     git push -u -f origin main
 }
+
 
 pull(){
 

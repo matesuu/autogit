@@ -11,7 +11,7 @@ int main(int argc, char** argv)
 {
     char* help_str = "help";
     char* init_str = "init";
-    char* remove_str = "remove";
+    char* deinit_str = "deinit";
     char* info_str = "info";
     char* new_str = "new";
     char* switch_str = "switch";
@@ -49,7 +49,7 @@ int main(int argc, char** argv)
         }
     }
 
-    else if(strcmp(remove_str, argv[1]) == 0)
+    else if(strcmp(deinit_str, argv[1]) == 0)
     {
         forget();
         printf("process finished ");
