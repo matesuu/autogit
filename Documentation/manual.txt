@@ -42,3 +42,5 @@ push - pushes all changes to a given branch
 pull pulls all changes from a given branch
 
                                                                 4. Pushing and Pulling
+
+In order to push to your remote repository, you must first 
