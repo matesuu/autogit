@@ -164,16 +164,16 @@ elif [ "$1" == "$delete_str" ]; then
 
 elif [ "$1" == "$push_str" ]; then
 
-    if [ $# -ge 2 ]; then
+    if [ $# -ge 3 ]; then
 
-        if [ $# -eq 2 ]; then
+        if [ $# -eq 3 ]; then
 
-        push $2
+        push_commit $2 $3
         echo "process finished "
 
         else
 
-        push_commit $2 $3
+        push $2
         echo "process finished "
         
         fi
