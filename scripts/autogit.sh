@@ -26,38 +26,31 @@ help(){
 }
 
 init(){
-
     git init && git symbolic-ref HEAD refs/heads/main
     git config --global init.defaultBranch main
-
     git remote add origin $2
     git remote -v
 }
 
 deinit(){
-
     git remote remove origin
     git remote -v
 }
 
 info(){
-
     git remote -v
     git branch
 }
 
 new(){
-
     git checkout -b $2
 }
 
 change(){
-
     git checkout $2
 }
 
 delete(){
-
     git branch -d $2
 }
 
@@ -65,9 +58,7 @@ push(){
 
     git status
     git add . --all
-
-    git commit -m "commited to repo using autogit"
-
+    git commit -m "committed to repo using autogit"
     git pull --rebase origin $2
     git push -u origin $2
 }
@@ -76,130 +67,98 @@ push_commit(){
 
     git status
     git add . --all
+    
+    # Check if commit message exists and use default message if not
+    if [ -z "$3" ]; then
+        echo "No commit message provided, using default."
+        commit_msg="committed to repo using autogit"
+    else
+        commit_msg="$3"
+    fi
 
-    git commit -m $3
+    echo "Committing with message: $commit_msg"
+    git commit -m "$commit_msg"
 
     git pull --rebase origin $2
     git push -u origin $2
-
 }
 
 pull(){
-
     git status
     git pull origin $2
 }
 
 if [ $# -eq 0 ]; then
-
     help
     exit 0
 fi
 
 if [ "$1" == "$help_str" ]; then
-
     help
 
 elif [ "$1" == "$init_str" ]; then
-
     if [ $# -eq 2 ]; then
-
         init $2
         echo "process finished "
-
     else
-
         echo "missing argument: remote repository url "
         exit 1
     fi
 
 elif [ "$1" == "$deinit_str" ]; then
-
     deinit
     echo "process finished "
 
 elif [ "$1" == "$info_str" ]; then
-
     info
     echo "process finished "
 
 elif [ "$1" == "$new_str" ]; then
-
     if [ $# -eq 2 ]; then
-
         new $2
         echo "process finished "
-
     else
-
         echo "missing argument: target branch name "
         exit 1
     fi
 
 elif [ "$1" == "$switch_str" ]; then
-
     if [ $# -eq 2 ]; then
-
         change $2
         echo "process finished "
-
     else
-
         echo "missing argument: target branch name "
         exit 1
     fi
 
 elif [ "$1" == "$delete_str" ]; then
-
     if [ $# -eq 2 ]; then
-
         delete $2
         echo "process finished "
-
     else
-
         echo "missing argument: target branch name "
         exit 1
     fi
 
 elif [ "$1" == "$push_str" ]; then
-
     if [ $# -ge 3 ]; then
-
-        if [ $# -eq 3 ]; then
-
-        push_commit $2 $3
+        push_commit $2 "$3"
         echo "process finished "
-
-        else
-
+    else
         push $2
         echo "process finished "
-        
-        fi
-
-    else
-
-        push
-        echo "process finished "
-    
     fi
 
 elif [ "$1" == "$pull_str" ]; then
-
     if [ $# -eq 2 ]; then
-
         pull $2
         echo "process finished "
-
     else
-
         echo "missing argument: branch name "
         exit 1
     fi
 
 else
-
     echo "error: unknown command "
 fi
 
