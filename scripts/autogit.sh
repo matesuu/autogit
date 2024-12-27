@@ -77,7 +77,7 @@ push_commit(){
     git status
     git add . --all
 
-    git commit -m "$3"
+    git commit -m $3
 
     git pull --rebase origin $2
     git push -u origin $2

@@ -43,4 +43,9 @@ pull pulls all changes from a given branch
 
                                                                 4. Pushing and Pulling
 
-In order to push to your remote repository, you must first 
+In order to push to your remote repository, you must first initialize your repository in the parent directory folder by writing
+to the terminal the following:
+
+    autogit init <remote_url>
+
+The remote url can be found on the specific repository page hosted on Github/Gitlab
