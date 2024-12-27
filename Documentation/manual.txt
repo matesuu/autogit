@@ -13,6 +13,11 @@ To compile from the src folder, simply type the following line into your termina
 
 or alternatively, use the Makefile provided within the src folder and type "make" within the directory.
 
+As a side note, the scripts folder contains an early version of autogit that initially only supported automating
+pushing and pulling, and can still be used if desired assuming the user only wants to make changes on a singular branch
+for the duration of the repository's lifetime. There also exists a scripts (PATH.sh) that automatically moves the compiled binary
+to the PATH variable in /usr/local/bin
+
 
                                                                 2. The PATH Variable
 
