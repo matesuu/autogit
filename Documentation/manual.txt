@@ -41,4 +41,4 @@ delete - deletes a branch within the remote repo
 push - pushes all changes to a given branch
 pull pulls all changes from a given branch
 
-                                                                4. 
+                                                                4. Pushing and Pulling
