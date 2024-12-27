@@ -48,4 +48,10 @@ to the terminal the following:
 
     autogit init <remote_url>
 
-The remote url can be found on the specific repository page hosted on Github/Gitlab
+The remote url can be found on the specific repository page hosted on Github/Gitlab. Pushing and pulling can be achieved
+through using the commands:
+
+    autogit push <branch_name> <optional: commit message>
+
+    autogit pull <branch_name>
+
