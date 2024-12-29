@@ -18,4 +18,6 @@ int push(char* BRANCH_NAME); // repo change functions
 int push_commit(char* BRANCH_NAME, char* COMMIT_MESSAGE);
 int pull(char* BRANCH_NAME);
 
+int kill(); // for removing local
+
 #endif
