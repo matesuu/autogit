@@ -59,6 +59,6 @@ through using the commands:
                                                                 5. Resolving Conflicts
 
 Occasionally, there will be instances where conflicts that arise when using git and autogit will prevent you from pushing
-to your remote repository. fa fa fa   
+
 
 # END OF MANUAL FILE
