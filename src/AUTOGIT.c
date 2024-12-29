@@ -93,7 +93,7 @@ int forget()
 
     char* args_2[] = {"rm", "-rf", ".git", NULL};
     run_git_command("rm", args_2);
-
+    ////
     return 0;
 }
 
