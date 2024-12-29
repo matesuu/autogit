@@ -63,7 +63,7 @@ void help()
     printf("delete - deletes a given branch from remote - autogit delete <branch_name> \n");
     printf("push - push all current changes to a specified branch - autogit push <branch_name> <optional: commit message> \n");
     printf("pull - pull all current changes from a specified branch - autogit pull <branch_name> \n");
-    printf("kill - removes remote repository and delete the .git folder of a directory (USE WITH CAUTION) - autogit kill \n\n");
+    printf("kill - removes remote repository and delete the .git folder of a directory (!USE WITH CAUTION!) - autogit kill \n\n");
 
     printf("written by matesuu (December 2024) \n\n");
 }
