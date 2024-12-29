@@ -186,8 +186,6 @@ int pull(char* BRANCH_NAME)
 
 int kill()
 {
-    char flag = '\0';
-
     char* args_1[] = {"git", "remote", "remove", "origin", NULL};
     run_git_command("git", args_1);
 
