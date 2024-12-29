@@ -18,7 +18,6 @@ int main(int argc, char** argv)
     char* delete_str = "delete";
     char* push_str = "push";
     char* pull_str = "pull";
-    char* kill_str = "kill";
 
     if(argc < 2)
     {
@@ -144,14 +143,6 @@ int main(int argc, char** argv)
         }
 
         pull(argv[2]);
-        printf("process finished ");
-
-        return 0;
-    }
-
-    else if(strcmp(kill_str, argv[1]) == 0)
-    {
-        kill();
         printf("process finished ");
 
         return 0;
