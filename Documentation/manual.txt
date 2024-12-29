@@ -56,4 +56,4 @@ through using the commands:
 
     autogit pull <branch_name>
 
-# END OF MANUAL
+# END OF MANUAL FILE
