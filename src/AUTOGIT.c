@@ -185,6 +185,16 @@ int pull(char* BRANCH_NAME)
 
 int kill()
 {
+    char flag = '\0';
+
+    printf("are you sure you want to kill this repository? (y/n) ");
+    scanf("%c", &flag);
+
+    if(flag != 'n')
+    {
+        exit(0);
+    }
+
     char* args_1[] = {"git", "remote", "remove", "origin", NULL};
     run_git_command("git", args_1);
 
