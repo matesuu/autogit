@@ -39,7 +39,8 @@ new - creates a new branch within remote repo and switches current working branc
 switch - switches the source branch to a given target branch
 delete - deletes a branch within the remote repo
 push - pushes all changes to a given branch
-pull pulls all changes from a given branch
+pull - pulls all changes from a given branch
+kill - remotes remote repository within a directory ('origin') and removes .git folder deleting the local - autogit kill
 
                                                                 4. Pushing and Pulling
 
@@ -61,7 +62,15 @@ through using the commands:
 Occasionally, there will be instances where conflicts that arise when using git and autogit will prevent you from pushing
 to your remote repository. From my findings, this primarily results from issues when using rm -rf on the .git folder within your
 local repository. To avoid this scenario, the deinit command ONLY removes the remote repo and not the local. However, if conflicts
-still arise, you will have to manually resolve these conflicts in order to continue using both git and autogit.
+still arise, you will have to manually resolve these conflicts in order to continue using both git and autogit. For more details,
+see git --help.
 
+
+                                                                6. Killing a repository
+
+The autogit kill command is included within the tool assuming the user wants to not only remove the remote repository, 
+but also wishes to delete the .git folder that tracks local version history. This is command is mainly included in the 
+case that a folder is accidently initalized and is therefore not recommend for working repositories. If a repository is killed,
+conflicts will likely arise forcing the user to resolve them manually (which can be difficult).
 
 # END OF MANUAL FILE

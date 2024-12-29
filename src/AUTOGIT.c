@@ -182,3 +182,14 @@ int pull(char* BRANCH_NAME)
 
     return 0;
 }
+
+int kill()
+{
+    char* args_1[] = {"git", "remote", "remove", "origin", NULL};
+    run_git_command("git", args_1);
+
+    char* args_2[] = {"rm", "-rf", ".git", NULL};
+    run_git_command("rm", args_2);
+
+    return 0;
+}
