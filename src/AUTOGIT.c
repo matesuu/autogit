@@ -69,6 +69,9 @@ void help()
 
 int init(char* REMOTE_URL)
 {
+    char* args_0[] = {"git", "init", NULL};
+    run_git_comamnd("git", args_0);
+    
     char* args_1[] = {"git", "init", "&&", "git", "symbolic-ref", "HEAD", "refs/heads/main", NULL};
     run_git_command("git", args_1);
 
@@ -93,7 +96,7 @@ int forget()
 
     char* args_2[] = {"rm", "-rf", ".git", NULL};
     run_git_command("rm", args_2);
-    ////
+
     return 0;
 }
 
