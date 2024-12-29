@@ -62,7 +62,7 @@ void help()
     printf("switch - changes current working branch - autogit change <branch_name> \n");
     printf("delete - deletes a given branch from remote - autogit delete <branch_name> \n");
     printf("push - push all current changes to a specified branch - autogit push <branch_name> <optional: commit message> \n");
-    printf("pull - pull all current changes from a specified branch - autogit pull <branch_name> \n\n");
+    printf("pull - pull all current changes from a specified branch - autogit pull <branch_name> \n");
 
     printf("written by matesuu (December 2024) \n\n");
 }
@@ -93,9 +93,6 @@ int forget()
 {
     char* args_1[] = {"git", "remote", "remove", "origin", NULL};
     run_git_command("git", args_1);
-
-    char* args_2[] = {"rm", "-rf", ".git", NULL};
-    run_git_command("rm", args_2);
 
     return 0;
 }
