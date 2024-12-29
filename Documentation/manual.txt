@@ -59,6 +59,9 @@ through using the commands:
                                                                 5. Resolving Conflicts
 
 Occasionally, there will be instances where conflicts that arise when using git and autogit will prevent you from pushing
+to your remote repository. From my findings, this primarily results from issues when using rm -rf on the .git folder within your
+local repository. To avoid this scenario, the deinit command ONLY removes the remote repo and not the local. However, if conflicts
+still arise, you will have to manually resolve these conflicts in order to continue using both git and autogit.
 
 
 # END OF MANUAL FILE
