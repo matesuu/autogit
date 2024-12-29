@@ -66,11 +66,11 @@ still arise, you will have to manually resolve these conflicts in order to conti
 see git --help.
 
 
-                                                                6. Killing a repository
+                                                                6. Deleting a Local Repository
 
-The autogit kill command is included within the tool assuming the user wants to not only remove the remote repository, 
-but also wishes to delete the .git folder that tracks local version history. This is command is mainly included in the 
-case that a folder is accidently initalized and is therefore not recommend for working repositories. If a repository is killed,
-conflicts will likely arise forcing the user to resolve them manually (which can be difficult).
+If you wish to delete a local repository, you can simply use the command: rm -rf .git to delete the .git folder that stores all local
+changes. However, the consequences of deleting a local repository and then reinitializing said repository can result in conflicts.
+As such, it highly discouraged to delete the .git folder and should only be used in cases of accidental/unwanted initialization
+or commit history corruption.
 
 # END OF MANUAL FILE
