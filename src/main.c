@@ -18,6 +18,8 @@ int main(int argc, char** argv)
     char* delete_str = "delete";
     char* push_str = "push";
     char* pull_str = "pull";
+    char* rebase_str = "rebase";
+
     if(argc < 2)
     {
         help();
@@ -146,7 +148,20 @@ int main(int argc, char** argv)
 
         return 0;
     }
-    
+
+    else if(strcmp(rebase_str, argv[1]) == 0)
+    {
+        if(argc < 3)
+        {
+            perror("missing argument: branch name ");
+        }
+
+        rebase(argv[2]);
+        printf("process finished ");
+        
+        return 0;
+    }
+
     else
     {
         perror("error: unknown command ");
