@@ -63,6 +63,7 @@ void help()
     printf("delete - deletes a given branch from remote - autogit delete <branch_name> \n");
     printf("push - push all current changes to a specified branch - autogit push <branch_name> <optional: commit message> \n");
     printf("pull - pull all current changes from a specified branch - autogit pull <branch_name> \n");
+    printf("rebase - rebase a given branch (usually for your initial commit) - autogit rebase <branch_name> \n\n")
 
     printf("written by matesuu (December 2024) \n\n");
 }
@@ -124,6 +125,12 @@ int change(char* BRANCH_NAME)
     return 0;
 }
 
+int rebase(char* BRANCH_NAME)
+{
+    char* args_0[] = {"git", "pull", "--rebase", "origin", BRANCH_NAME, NULL};
+    run_git_command("git", args_0);
+}
+
 int delete(char* BRANCH_NAME)
 {
     char* args_1[] = {"git", "branch", "-d", BRANCH_NAME, NULL};
@@ -159,9 +166,6 @@ int push_commit(char* BRANCH_NAME, char* COMMIT_MESSAGE)
 
     char* args_3[] = {"git", "commit", "-m", COMMIT_MESSAGE, NULL};
     run_git_command("git", args_3);
-
-    char* args_4[] = {"git", "pull", "--rebase", "origin", BRANCH_NAME, NULL};
-    run_git_command("git", args_4);
 
     char* args_5[] = {"git", "push", "-u", "origin", BRANCH_NAME, NULL};
     run_git_command("git", args_5);
