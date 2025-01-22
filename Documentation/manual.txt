@@ -41,6 +41,7 @@ delete - deletes a branch within the remote repo
 push - pushes all changes to a given branch
 pull - pulls all changes from a given branch
 kill - remotes remote repository within a directory ('origin') and removes .git folder deleting the local - autogit kill
+rebase - rebases a branch - this is commonly used to resolve divergent branches for the initial commmit - autogit rebase <branch_name>
 
                                                                 4. Pushing and Pulling
 
