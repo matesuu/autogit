@@ -143,9 +143,6 @@ int push(char* BRANCH_NAME)
     char* args_3[] = {"git", "commit", "-m", "commited to repo using autogit", NULL};
     run_git_command("git", args_3);
 
-    char* args_4[] = {"git", "pull", "--rebase", "origin", BRANCH_NAME, NULL};
-    run_git_command("git", args_4);
-
     char* args_5[] = {"git", "push", "-u", "origin", BRANCH_NAME, NULL};
     run_git_command("git", args_5);
 
