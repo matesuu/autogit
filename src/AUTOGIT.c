@@ -54,6 +54,7 @@ int run_git_command(char* GIT_COMMAND, char** GIT_COMMAND_ARGUMENTS)
 
 void help()
 {
+    printf("\nautogit v.1 - a git automation utility");
     printf("\n\nhelp - \n\n");
     printf("init - initialize a local and remote repository and create branch main - autogit init <remote_url_name> \n");
     printf("deinit - remove currently existing remote - autogit deinit \n");
