@@ -1,6 +1,5 @@
 # autogit
-<<<<<<< HEAD
-=======
+
 written by matesuu
 
 
