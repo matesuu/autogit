@@ -22,7 +22,7 @@ int main(int argc, char** argv)
 
     if(argc < 2)
     {
-        help();
+        home_screen();
         return 0;
     }
 

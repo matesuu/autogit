@@ -4,6 +4,7 @@
 
 int run_git_command(char* GIT_COMMAND, char** GIT_COMMAND_ARGUMENTS); // for process control
 
+void home_screen(); // animated home screen
 void help();  // display command information
 
 int init(char* REMOTE_URL); // remote functions
